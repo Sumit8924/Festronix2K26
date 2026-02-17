@@ -26,6 +26,38 @@
             body, a, button { cursor: auto; } 
             .cursor-dot, .cursor-outline { display: none !important; }
         }
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
+        }
 
         /* ----- LOADER ANIMATION - OPTIMIZED FOR FAST LOADING ----- */
         .loader-container {
@@ -149,17 +181,19 @@
 
         .nav-link {
             color: white !important;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             padding: 1rem 2rem !important;
-            font-size: 1.25rem;
+            font-size: 1.1rem;   /* Default (mobile) */
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-transform: uppercase;
             white-space: nowrap;
             border-radius: 10px;
             display: flex;
             align-items: center;
+        
         }
+
 
         .nav-link i {
             margin-right: 8px;
@@ -183,6 +217,7 @@
             border: 2px solid #ff4733 !important;
             background: rgba(255, 71, 51, 0.2) !important;
             padding: 0.5rem 0.75rem;
+            margin: 0 1rem;
         }
         
         .navbar-toggler-icon {
@@ -193,47 +228,61 @@
             box-shadow: 0 0 0 0.25rem rgba(255, 71, 51, 0.25);
         }
 
-        /* Mobile menu - Bootstrap collapse styling */
         @media (max-width: 991px) {
-            .navbar-collapse {
-                background: rgba(0, 0, 0, 0.95);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                padding: 1rem;
-                border-bottom: 2px solid #ff4733;
-                border-top: none;
-            }
-            
-            .navbar-nav {
-                background: transparent;
-                margin: 0;
-            }
-            
-            .nav-link {
-                min-height: 50px;
-                padding: 0.8rem 1rem !important;
-                text-align: center;
-                background: rgba(255, 71, 51, 0.1);
-                margin: 4px 0;
-                border-radius: 8px;
-                border: 1px solid rgba(255, 71, 51, 0.3);
-                font-size: 1rem;
-                justify-content: center;
-            }
-            
-            .nav-link:hover {
-                background: rgba(255, 71, 51, 0.3);
-            }
-            
-            .nav-link.active {
-                background: rgba(255, 71, 51, 0.4);
-                border-bottom: 4px solid #ffcc33 !important;
+            .section-title {
+                font-size: 2.2rem;
+                letter-spacing: 2px;
+                line-height: 1.25;
             }
         }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.9rem;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .section-title {
+                font-size: 1.7rem;
+                letter-spacing: 1.2px;
+            }
+        }
+
+        /* ===== OUR SPONSORS TITLE (FINAL FIX) ===== */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;        /* ✅ smaller & clean */
+            font-weight: 700;
+            color: #ffcc33;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(255,204,51,0.4);
+        }
+
+        /* Tablets */
+        @media (max-width: 991px) {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1rem;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 360px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
 
         /* ----- Scroll Indicator ----- */
         .scroll-indicator {
@@ -288,19 +337,30 @@
             box-shadow: 0 10px 25px rgba(255,153,102,0.2);
         }
         .sponsor-logo-container {
-            height: 100px;
+            height: 120px; /* Increased height for bigger logos */
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
         }
         .sponsor-logo-container img {
-            max-width: 100%; max-height: 100%;
+            max-width: 300px; /* Increased max-width for larger logos */
+            max-height: 300px; /* Increased max-height for larger logos */
+            width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
-            transition: 0.3s;
+
+            /* 🔥 MAKE LOGO BIGGER */
+            transform: scale(1.6);
+
+            filter: drop-shadow(0 0 18px rgba(255,255,255,0.25));
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
-        .sponsor-card:hover img { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255,153,102,0.5)); }
+
+        .sponsor-card:hover img {
+            transform: scale(1.8);
+            filter: drop-shadow(0 0 30px rgba(255,153,102,0.7));
+        }
+
         .sponsor-name { font-size: 1.3rem; font-weight: 600; color: #fff; }
         .sponsor-type { color: #ff9966; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -326,11 +386,11 @@
         }
         @keyframes pulse-glow { 0% { box-shadow: 0 0 15px rgba(255,153,102,0.5); } 50% { box-shadow: 0 0 25px rgba(255,153,102,0.8); } }
 
-        /* ----- INFINITE SLIDER ----- */
+       /* ----- INFINITE SLIDER - UPDATED FOR MUCH BIGGER LOGOS ----- */
         .slider-section {
-            background: rgba(0,0,0,0.3);
+            background: transparent;
             border-radius: 15px;
-            padding: 2rem 0;
+            padding: 4rem 0; /* Increased padding */
             overflow: hidden;
         }
         .slider-track {
@@ -342,15 +402,146 @@
         @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .slider-item {
             flex: 0 0 auto;
-            width: 180px;
-            margin: 0 1.5rem;
+            width: 400px; /* Significantly increased width */
+            margin: 0 3rem; /* Increased margin */
             text-align: center;
         }
         .slider-logo-box {
-            height: 70px; display: flex; align-items: center; justify-content: center;
+            height: 220px; /* Dramatically increased height */
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: transparent;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: transparent;
         }
-        .slider-logo-box img { max-width: 100%; max-height: 100%; filter: grayscale(0.3); transition: 0.3s; }
-        .slider-item:hover img { filter: grayscale(0); transform: scale(1.1); }
+        .slider-logo-box img { 
+            max-width: 100%; 
+            max-height: 300px; /* Much bigger max-height */
+            width: auto;
+            filter: grayscale(0.2); 
+            transition: all 0.4s ease; 
+            object-fit: contain;
+        }
+        .slider-item:hover img { 
+            filter: grayscale(0); 
+            transform: scale(1.15); 
+        }
+        .slider-item .text-white {
+            font-size: 1.4rem; /* Bigger company name */
+            font-weight: 700;
+            margin-top: 1.2rem !important;
+            letter-spacing: 1px;
+        }
+
+        /* ----- SPONSOR CARD – MUCH BIGGER LOGOS ----- */
+        .sponsor-card {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .sponsor-card:hover {
+            background: rgba(255,153,102,0.1);
+            border-color: rgba(255,153,102,0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(255,153,102,0.2);
+        }
+        .sponsor-logo-container {
+            height: 220px; /* Dramatically increased height */
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: transparent;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: transparent;
+        }
+        .sponsor-logo-container img {
+            max-width: 100%; 
+            max-height: 300px; /* Much bigger max-height */
+            width: auto;
+            filter: grayscale(0.2); 
+            transition: all 0.4s ease; 
+            object-fit: contain;
+        }
+
+
+        .sponsor-card:hover img { 
+            transform: scale(1.1); 
+            filter: drop-shadow(0 0 25px rgba(255,153,102,0.6)); 
+        }
+        .sponsor-name { 
+            font-size: 1.8rem; /* Bigger company name */
+            font-weight: 700; 
+            color: #fff; 
+            margin-bottom: 0.5rem;
+        }
+        .sponsor-type { 
+            color: #ff9966; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 991px) {
+            .slider-item {
+                width: 300px;
+                margin: 0 2rem;
+            }
+            .slider-logo-box {
+                height: 180px;
+            }
+            .slider-logo-box img {
+                max-height: 160px;
+            }
+            .sponsor-logo-container {
+                height: 150px;
+            }
+            .sponsor-logo-container img {
+                max-height: 130px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider-item {
+                width: 280px;
+                margin: 0 1.5rem;
+            }
+            .slider-logo-box {
+                height: 160px;
+            }
+            .slider-logo-box img {
+                max-height: 140px;
+            }
+            .slider-item .text-white {
+                font-size: 1.2rem;
+            }
+            .sponsor-name {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slider-item {
+                width: 240px;
+                margin: 0 1rem;
+            }
+            .slider-logo-box {
+                height: 140px;
+            }
+            .slider-logo-box img {
+                max-height: 120px;
+            }
+        }
 
         /* ----- 3D BUTTONS (effects) ----- */
         .btn-3d-sponsor {
@@ -407,6 +598,16 @@
         /* Responsive adjustments */
         @media (max-width: 991px) {
             .scroll-indicator { top: 0; }
+            .slider-item {
+                width: 220px;
+                margin: 0 1.5rem;
+            }
+            .slider-logo-box {
+                height: 120px;
+            }
+            .slider-logo-box img {
+                max-height: 250px;
+            }
         }
 
         /* Card button style */
@@ -434,6 +635,14 @@
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
+        <!-- VIDEO BACKGROUND -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bgVideo" preload="metadata">
+            <source src="https://res.cloudinary.com/dpc4l1hic/video/upload/v1770814312/light_gzuewo.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
     <!-- LOADER (sponsors page style) - FIXED TIMING -->
     <div class="loader-container" id="loader">
         <div class="loader-wrapper">
@@ -447,7 +656,7 @@
             <span class="loader-letter">S</span>
             <div class="loader"></div>
         </div>
-        <div class="loader-subtitle">FESTRONIX 2.0</div>
+        
     </div>
 
     <!-- SCROLL INDICATOR -->
@@ -456,12 +665,23 @@
     <!-- ========== UPDATED NAVIGATION - USING ONLY BOOTSTRAP COLLAPSE ========== -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-lg-4">
-            <a class="navbar-brand d-lg-none text-warning fw-bold" href="#">FESTRONIX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#festronixNavbar" aria-controls="festronixNavbar" aria-expanded="false" aria-label="Toggle navigation">
+
+            <!-- Brand spacer (required for proper alignment) -->
+            <a class="navbar-brand" href="index.html"></a>
+
+            <!-- Hamburger button (moved to right) -->
+            <button class="navbar-toggler ms-auto" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#festronixNavbar"
+                aria-controls="festronixNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Menu -->
             <div class="collapse navbar-collapse" id="festronixNavbar">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 w-100 justify-content-center">
                     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="previous.html"><i class="fas fa-history"></i> Previous</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
@@ -472,8 +692,10 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
+
         </div>
     </nav>
+
 
     <!-- MAIN CONTENT – bootstrap grid -->
     <main class="container-fluid px-3 px-md-5" style="margin-top: 90px;">
@@ -491,7 +713,7 @@
                 <div class="marketing-featured text-center">
                     <h3 class="category-title">Managed & Marketed By</h3>
                     <p class="text-white-50">Official Media & Marketing Partner</p>
-                    <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771088369/Untitled_design_3_cnfuok.png" alt="BrandZone Media" class="img-fluid" style="max-height: 120px;" loading="lazy">
+                    <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771088369/Untitled_design_3_cnfuok.png" alt="BrandZone Media" class="img-fluid" style="max-height: 300px;" loading="lazy">
                     <div class="featured-sponsor-name fs-2 fw-bold text-white mt-3">BrandZone Media</div>
                     <span class="featured-sponsor-tag mt-3">Official Marketing Partner</span>
                     <p class="text-secondary mt-3 mx-auto" style="max-width: 600px;">Leading the digital marketing revolution with innovative campaigns and strategic brand partnerships.</p>
@@ -507,22 +729,61 @@
             </div>
         </div>
 
-        <!-- INFINITE SLIDER – duplicate via js -->
+        <!-- INFINITE SLIDER – UPDATED WITH ONLY 4 COMPANIES -->
         <div class="slider-section my-5">
             <h3 class="text-center fs-1 fw-bold" style="color:#ff9966; font-family: Orbitron;">Our Esteemed Partners</h3>
             <div class="position-relative">
                 <div class="slider-track" id="sponsorSlider">
-                    <!-- slides will be duplicated once via JS -->
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/ff6600/ffffff?text=TECHGIANT" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">TechGiant Inc.</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/0066cc/ffffff?text=INNOVATELABS" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">InnovateLabs</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/3366ff/ffffff?text=AI-SOLUTIONS" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">AI Solutions</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/9900cc/ffffff?text=CYBERNET" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">CyberNet Systems</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/ff3366/ffffff?text=ROBOWORKS" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">RoboWorks</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/009933/ffffff?text=GREENENERGY" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">GreenEnergy</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/00cc99/ffffff?text=DATASYSTEMS" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">DataSystems</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/ff9966/ffffff?text=DIGITALWAVE" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">DigitalWave</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/b30000/ffffff?text=FUTURETECH" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">FutureTech</div></div>
-                    <div class="slider-item"><div class="slider-logo-box"><img src="https://via.placeholder.com/150x80/663399/ffffff?text=QUANTUMLEAP" class="img-fluid" loading="lazy"></div><div class="text-white mt-2">QuantumLeap</div></div>
+                    <!-- Only the 4 companies, repeated for infinite effect -->
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330700/4_1_veygb3.png" class="img-fluid" loading="lazy" alt="Webbucket">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">Webbucket</div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330698/3_1_fatgqq.png" class="img-fluid" loading="lazy" alt="LIT">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">LIT - The Events Partner</div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330697/2_1_g2dtuz.png" class="img-fluid" loading="lazy" alt="IIG Varsity">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">IIG Varsity</div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330695/1_1_iismhq.png" class="img-fluid" loading="lazy" alt="Pythonsoft LLP">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">Pythonsoft LLP</div>
+                    </div>
+                    <!-- Duplicate for seamless infinite scroll -->
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330700/4_1_veygb3.png" class="img-fluid" loading="lazy" alt="Webbucket">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">Webbucket</div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330698/3_1_fatgqq.png" class="img-fluid" loading="lazy" alt="LIT">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">LIT - The Events Partner</div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330697/2_1_g2dtuz.png" class="img-fluid" loading="lazy" alt="IIG Varsity">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">IIG Varsity</div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-logo-box">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330695/1_1_iismhq.png" class="img-fluid" loading="lazy" alt="Pythonsoft LLP">
+                        </div>
+                        <div class="text-white mt-2 fw-bold fs-5">Pythonsoft LLP</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -537,30 +798,17 @@
             <div class="row g-4">
                 <div class="col-sm-6 col-lg-4">
                     <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/0066cc/fff?text=INNOVATELABS" loading="lazy"></div>
-                        <div class="sponsor-name">InnovateLabs</div>
+                        <div class="sponsor-logo-container">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330700/4_1_veygb3.png" alt="Webbucket" loading="lazy" style="max-height: 300px;">
+                        </div>
+                        <div class="sponsor-name">Webbucket</div>
                         <div class="sponsor-type">Technical Partner</div>
-                        <a href="terms.html?sponsor=innovatelabs" class="btn card-btn mt-3">View Terms</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/3366ff/fff?text=AI-SOLUTIONS" loading="lazy"></div>
-                        <div class="sponsor-name">AI Solutions</div>
-                        <div class="sponsor-type">Technical Partner</div>
-                        <a href="terms.html?sponsor=aisolutions" class="btn card-btn mt-3">View Terms</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/9900cc/fff?text=CYBERNET" loading="lazy"></div>
-                        <div class="sponsor-name">CyberNet Systems</div>
-                        <div class="sponsor-type">Technical Partner</div>
-                        <a href="terms.html?sponsor=cybernet" class="btn card-btn mt-3">View Terms</a>
+                        
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Event Partners -->
         <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px;">
             <div class="category-header text-center mb-4">
@@ -570,53 +818,45 @@
             <div class="row g-4">
                 <div class="col-sm-6 col-lg-4">
                     <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/009933/fff?text=GREENENERGY" loading="lazy"></div>
-                        <div class="sponsor-name">GreenEnergy</div>
-                        <div class="sponsor-type">Sustainability Partner</div>
-                        <a href="terms.html?sponsor=greenenergy" class="btn card-btn mt-3">View Terms</a>
+                        <div class="sponsor-logo-container">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330698/3_1_fatgqq.png" alt="LIT" loading="lazy" style="max-height: 300px;">
+                        </div>
+                        <div class="sponsor-name">LIT</div>
+                        <div class="sponsor-type">Events Partner</div>
+                        
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/00cc99/fff?text=DATASYSTEMS" loading="lazy"></div>
-                        <div class="sponsor-name">DataSystems</div>
-                        <div class="sponsor-type">Data Partner</div>
-                        <a href="terms.html?sponsor=datasystems" class="btn card-btn mt-3">View Terms</a>
+                        <div class="sponsor-logo-container">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330697/2_1_g2dtuz.png" alt="IIG Varsity" loading="lazy" style="max-height: 300px;">
+                        </div>
+                        <div class="sponsor-name">IIG Varsity</div>
+                        <div class="sponsor-type">Events Partner</div>
+                        
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/b30000/fff?text=FUTURETECH" loading="lazy"></div>
-                        <div class="sponsor-name">FutureTech</div>
-                        <div class="sponsor-type">Innovation Partner</div>
-                        <a href="terms.html?sponsor=futuretech" class="btn card-btn mt-3">View Terms</a>
+                        <div class="sponsor-logo-container">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771330695/1_1_iismhq.png" alt="Pythonsoft LLP" loading="lazy" style="max-height: 300px;">
+                        </div>
+                        <div class="sponsor-name">Pythonsoft LLP</div>
+                        <div class="sponsor-type">Events Partner</div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Media Partners -->
-        <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px;">
+
+        <!-- Media Partners - REMOVED OTHER COMPANIES, KEPT EMPTY BUT STRUCTURE -->
+        <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px; display: none;">
             <div class="category-header text-center mb-4">
                 <h2 class="category-title">Media Partners</h2>
                 <p class="text-white-50">Amplifying Our Message</p>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/ff9966/fff?text=DIGITALWAVE" loading="lazy"></div>
-                        <div class="sponsor-name">DigitalWave</div>
-                        <div class="sponsor-type">Media Partner</div>
-                        <a href="terms.html?sponsor=digitalwave" class="btn card-btn mt-3">View Terms</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo-container"><img src="https://via.placeholder.com/200x80/663399/fff?text=QUANTUMLEAP" loading="lazy"></div>
-                        <div class="sponsor-name">QuantumLeap</div>
-                        <div class="sponsor-type">Media Partner</div>
-                        <a href="terms.html?sponsor=quantumleap" class="btn card-btn mt-3">View Terms</a>
-                    </div>
-                </div>
+                <!-- Empty - no media partners shown -->
             </div>
         </div>
 
@@ -636,7 +876,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div class="d-flex align-items-center gap-3">
-                        <img src="gift logo.png" alt="GIFT" class="college-logo" loading="lazy">
+                        <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1770814304/gift_logo_rzl4tf.png" alt="GIFT" class="college-logo" loading="lazy">
                         <div><span class="fw-bold fs-3" style="color:#ffcc33; font-family:Orbitron;">GIFT AUTONOMOUS</span><br><span class="text-white-50">BHUBANESWAR</span></div>
                     </div>
                     <p class="text-warning mt-3">Igniting Minds, Empowering Futures</p>
@@ -764,13 +1004,8 @@
                 });
             }
 
-            // ---------- SLIDER DUPLICATE ----------
-            const track = document.getElementById('sponsorSlider');
-            if (track && !track.hasAttribute('data-duplicated')) {
-                const clone = track.innerHTML;
-                track.innerHTML = clone + clone;
-                track.setAttribute('data-duplicated', 'true');
-            }
+            // ---------- SLIDER DUPLICATE - ALREADY DUPLICATED IN HTML ----------
+            // No need to duplicate via JS as we've manually duplicated in HTML
 
             // ---------- SPONSOR BUTTONS ----------
             const becomeBtn = document.getElementById('becomeSponsorBtn');
