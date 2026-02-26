@@ -3,28 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>FESTRONIX 2.0 - Sponsors (Bootstrap)</title>
-    <!-- BOOTSTRAP 5 CORE - optimized loading -->
+    <title>FESTRONIX 2.0 – Sponsors (Event Partners aligned)</title>
+    <!-- BOOTSTRAP 5 CORE (optimized) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <!-- icons + fonts - optimized loading -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    
-    <!-- Fallback for no js -->
     <noscript>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </noscript>
     
-    <!-- custom styles -->
     <style>
-        /* ----- bootstrap reset remains, minimal theme overrides ----- */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        
         body {
             background: #000;
             font-family: 'Rajdhani', sans-serif;
@@ -35,77 +29,33 @@
         a, button { cursor: none; }
         @media (hover: none) and (pointer: coarse) { 
             body, a, button { cursor: auto; } 
-            .cursor-dot, .cursor-outline { display: none !important; }
+            .cursor-dot, .cursor-outline { display: none !important; } 
         }
-        /* Video Background */
+
+        /* video background */
         .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
         }
-
         .video-background video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: cover;
-            opacity: 0.6;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            min-width: 100%; min-height: 100%; width: auto; height: auto; object-fit: cover; opacity: 0.6;
         }
-
         .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
         }
 
-        /* ----- OPTIMIZED LOADER ANIMATION - REDUCED TIMING ----- */
+        /* loader – quick */
         .loader-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 99999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 99999;
+            display: flex; justify-content: center; align-items: center; transition: opacity 0.3s ease; pointer-events: none;
         }
-        .loader-hidden { 
-            opacity: 0; 
-            visibility: hidden; 
-        }
-        .loader-wrapper { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            position: relative;
-        }
+        .loader-hidden { opacity: 0; visibility: hidden; }
+        .loader-wrapper { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; position: relative; }
         .loader-letter {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            color: #ff4733;
-            text-shadow: 0 0 15px rgba(255,71,51,0.7);
-            margin: 0 3px;
-            opacity: 0;
+            font-family: 'Orbitron', sans-serif; font-size: 4rem; font-weight: 900; color: #ff4733;
+            text-shadow: 0 0 15px rgba(255,71,51,0.7); margin: 0 3px; opacity: 0;
             animation: letterReveal 0.2s forwards;
-            display: inline-block;
         }
         .loader-letter:nth-child(1) { animation-delay: 0.05s; }
         .loader-letter:nth-child(2) { animation-delay: 0.08s; }
@@ -115,480 +65,152 @@
         .loader-letter:nth-child(6) { animation-delay: 0.2s; }
         .loader-letter:nth-child(7) { animation-delay: 0.23s; }
         .loader-letter:nth-child(8) { animation-delay: 0.26s; }
-        
-        @keyframes letterReveal { 
-            to { 
-                opacity: 1; 
-                text-shadow: 0 0 20px rgba(255,71,51,1); 
-            } 
-        }
-        .loader {
-            position: absolute;
-            bottom: -20px;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ffcc33, transparent);
-            animation: loadingBar 1s ease-in-out forwards;
-        }
-        @keyframes loadingBar { 
-            0% { transform: translateX(-100%); } 
-            100% { transform: translateX(100%); } 
-        }
-        .loader-subtitle {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.2rem;
-            color: #ff9966;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards 0.8s;
-        }
+        @keyframes letterReveal { to { opacity: 1; text-shadow: 0 0 20px rgba(255,71,51,1); } }
+        .loader { position: absolute; bottom: -20px; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #ffcc33, transparent); animation: loadingBar 1s ease-in-out forwards; }
+        @keyframes loadingBar { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .loader-subtitle { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; color: #ff9966; letter-spacing: 2px; margin-top: 20px; opacity: 0; animation: fadeIn 0.5s ease forwards 0.8s; }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        @media (max-width: 991px) {
-            .scroll-indicator { top: 0; }
-            .loader-letter { font-size: 3rem; }
-        }
-        @media (max-width: 767px) {
-            .loader-letter { font-size: 2.5rem; }
-        }
-        @media (max-width: 599px) {
-            .loader-letter { font-size: 2rem; }
-        }
-        @media (max-width: 380px) {
-            .loader-letter { font-size: 1.5rem; }
-        }
+        @media (max-width: 991px) { .loader-letter { font-size: 3rem; } }
+        @media (max-width: 767px) { .loader-letter { font-size: 2.5rem; } }
+        @media (max-width: 599px) { .loader-letter { font-size: 2rem; } }
+        @media (max-width: 380px) { .loader-letter { font-size: 1.5rem; } }
 
-        /* ----- CUSTOM CURSOR ----- */
+        /* custom cursor */
         .cursor-dot, .cursor-outline {
             position: fixed; top: 0; left: 0; transform: translate(-50%, -50%);
             border-radius: 50%; z-index: 9999; pointer-events: none;
             will-change: left, top, transform;
         }
         .cursor-dot { width: 8px; height: 8px; background: #ffcc33; }
-        .cursor-outline {
-            width: 40px; height: 40px; border: 2px solid rgba(255,71,51,0.8);
-            transition: width 0.2s, height 0.2s, border-color 0.2s;
-        }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(255,71,51,0.8); transition: width 0.2s, height 0.2s, border-color 0.2s; }
 
-        /* ===== UPDATED NAVBAR STYLES - USING ONLY BOOTSTRAP COLLAPSE ===== */
+        /* navbar */
         .navbar {
-            background: transparent;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 2px solid #ff4733;
-            min-height: 70px;
-            z-index: 100;
-            padding: 0 1rem;
+            background: transparent; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-bottom: 2px solid #ff4733; min-height: 70px; z-index: 100; padding: 0 1rem;
         }
-
-        /* Desktop: Center Nav Items */
-        @media (min-width: 992px) {
-            .navbar-nav {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-            }
-        }
-
+        @media (min-width: 992px) { .navbar-nav { width: 100%; display: flex; justify-content: center; align-items: center; gap: 40px; } }
         .nav-link {
-            color: white !important;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            padding: 1rem 2rem !important;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            white-space: nowrap;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
+            color: white !important; font-weight: 500; letter-spacing: 1.5px; padding: 1rem 2rem !important;
+            font-size: 1.1rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); text-transform: uppercase;
+            white-space: nowrap; border-radius: 10px; display: flex; align-items: center;
         }
+        .nav-link i { margin-right: 8px; font-size: 1.1rem; }
+        .nav-link:hover { color: #ffcc33 !important; background: rgba(255, 71, 51, 0.15); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255, 71, 51, 0.3); }
+        .nav-link.active { color: #ffcc33 !important; border-bottom: 4px solid #ffcc33; }
+        .navbar-toggler { border: 2px solid #ff4733 !important; background: rgba(255, 71, 51, 0.2) !important; padding: 0.5rem 0.75rem; margin: 0 1rem; }
+        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 71, 51, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; }
+        .navbar-toggler:focus { box-shadow: 0 0 0 0.25rem rgba(255, 71, 51, 0.25); }
 
-        .nav-link i {
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
+        /* scroll indicator */
+        .scroll-indicator { position: fixed; top: 70px; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #ff4733, #ffcc33, #ff4733); transform-origin: left; transform: scaleX(0); z-index: 1031; }
 
-        .nav-link:hover { 
-            color: #ffcc33 !important; 
-            background: rgba(255, 71, 51, 0.15); 
-            transform: translateY(-5px); 
-            box-shadow: 0 5px 15px rgba(255, 71, 51, 0.3); 
-        }
+        /* section headers */
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 3.5rem; font-weight: 900; color: #ffcc33; text-transform: uppercase; text-shadow: 0 0 20px rgba(255,204,51,0.5); }
+        .section-subtitle { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #ff9966; }
+        .category-title { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 700; color: #ff9966; text-shadow: 0 0 10px rgba(255,153,102,0.5); }
 
-        .nav-link.active { 
-            color: #ffcc33 !important; 
-            border-bottom: 4px solid #ffcc33;
-        }
-
-        /* Navbar Toggler Style */
-        .navbar-toggler {
-            border: 2px solid #ff4733 !important;
-            background: rgba(255, 71, 51, 0.2) !important;
-            padding: 0.5rem 0.75rem;
-            margin: 0 1rem;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 71, 51, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: 0 0 0 0.25rem rgba(255, 71, 51, 0.25);
-        }
-
-        /* ----- Scroll Indicator ----- */
-        .scroll-indicator {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4733, #ffcc33, #ff4733);
-            transform-origin: left;
-            transform: scaleX(0);
-            z-index: 1031;
-        }
-
-        /* ----- SECTION HEADERS – ORBITRON ----- */
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #ffcc33;
-            text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255,204,51,0.5);
-        }
-        .section-subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: #ff9966;
-        }
-        .category-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #ff9966;
-            text-shadow: 0 0 10px rgba(255,153,102,0.5);
-        }
-
-        /* ----- SPONSOR CARD – ENLARGED LOGOS ----- */
+        /* sponsor card — enlarged logos */
         .sponsor-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;
+            padding: 2rem; text-align: center; transition: all 0.3s; height: 100%; display: flex; flex-direction: column;
         }
-        .sponsor-card:hover {
-            background: rgba(255,153,102,0.1);
-            border-color: rgba(255,153,102,0.5);
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(255,153,102,0.2);
-        }
-        .sponsor-logo-container {
-            height: auto; /* Fit content instead of fixed height */
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            background: transparent;
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .sponsor-logo-container img {
-            max-width: 100%; 
-            max-height: 280px; /* Logo max size */
-            width: auto;
-            filter: grayscale(0.2); 
-            transition: all 0.4s ease; 
-            object-fit: contain;
-        }
-        .sponsor-card:hover img { 
-            transform: scale(1.15); 
-            filter: drop-shadow(0 0 25px rgba(255,153,102,0.6)); 
-        }
-        .sponsor-name { 
-            font-size: 1.8rem;
-            font-weight: 700; 
-            color: #fff; 
-            margin-bottom: 0.5rem;
-        }
-        .sponsor-type { 
-            color: #ff9966; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
+        .sponsor-card:hover { background: rgba(255,153,102,0.1); border-color: rgba(255,153,102,0.5); transform: translateY(-10px); box-shadow: 0 10px 25px rgba(255,153,102,0.2); }
+        .sponsor-logo-container { display: flex; align-items: center; justify-content: center; background: transparent; border-radius: 15px; padding: 1.5rem; margin-bottom: 1rem; }
+        .sponsor-logo-container img { max-width: 100%; max-height: 280px; width: auto; filter: grayscale(0.2); transition: all 0.4s ease; object-fit: contain; }
+        .sponsor-card:hover img { transform: scale(1.15); filter: drop-shadow(0 0 25px rgba(255,153,102,0.6)); }
+        .sponsor-name { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .sponsor-type { color: #ff9966; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; font-weight: 600; }
 
-        /* ----- FEATURED MARKETING SECTION – ENLARGED LOGO ----- */
+        /* marketing featured */
         .marketing-featured {
             background: linear-gradient(135deg, rgba(255,153,102,0.1), rgba(0,102,204,0.1));
-            border: 2px solid rgba(0,102,204,0.5);
-            border-radius: 20px;
-            padding: 2.5rem;
-            position: relative;
+            border: 2px solid rgba(0,102,204,0.5); border-radius: 20px; padding: 2.5rem; position: relative;
         }
         .marketing-featured::before {
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            right: 0;
-            height: 3px; 
-            background: linear-gradient(90deg, #ff9966, #0066cc, #ff9966);
-            background-size: 200px 100%;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #ff9966, #0066cc, #ff9966); background-size: 200px 100%;
             animation: shimmer 2s infinite;
         }
-        @keyframes shimmer { 
-            0% { background-position: -200px 0; } 
-            100% { background-position: 200px 0; } 
-        }
+        @keyframes shimmer { 0% { background-position: -200px 0; } 100% { background-position: 200px 0; } }
         .featured-sponsor-tag {
-            background: linear-gradient(90deg, #ff9966, #0066cc);
-            color: white; 
-            padding: 8px 20px; 
-            border-radius: 20px;
-            display: inline-block; 
-            font-weight: 600;
-            animation: pulse-glow 2s infinite;
+            background: linear-gradient(90deg, #ff9966, #0066cc); color: white; padding: 8px 20px; border-radius: 20px;
+            display: inline-block; font-weight: 600; animation: pulse-glow 2s infinite;
         }
-        @keyframes pulse-glow { 
-            0% { box-shadow: 0 0 15px rgba(255,153,102,0.5); } 
-            50% { box-shadow: 0 0 25px rgba(255,153,102,0.8); } 
-        }
+        @keyframes pulse-glow { 0% { box-shadow: 0 0 15px rgba(255,153,102,0.5); } 50% { box-shadow: 0 0 25px rgba(255,153,102,0.8); } }
 
-        /* ----- INFINITE SLIDER - MUCH BIGGER LOGOS ----- */
-        .slider-section {
-            background: transparent;
-            border-radius: 15px;
-            padding: 4rem 0;
-            overflow: hidden;
-        }
-        .slider-track {
-            display: flex;
-            animation: slide 40s linear infinite;
-            width: fit-content;
-        }
+        /* infinite slider – bigger logos */
+        .slider-section { background: transparent; border-radius: 15px; padding: 4rem 0; overflow: hidden; }
+        .slider-track { display: flex; animation: slide 40s linear infinite; width: fit-content; }
         .slider-track:hover { animation-play-state: paused; }
-        @keyframes slide { 
-            0% { transform: translateX(0); } 
-            100% { transform: translateX(-50%); } 
-        }
-        .slider-item {
-            flex: 0 0 auto;
-            width: 500px; /* Increased from 400px */
-            margin: 0 3rem;
-            text-align: center;
-        }
-        .slider-logo-box {
-            height: 300px; /* Increased from 220px */
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            background: transparent;
-            border-radius: 15px;
-            padding: 1.5rem;
-        }
-        .slider-logo-box img { 
-            max-width: 100%; 
-            max-height: 450px; /* Increased from 300px */
-            width: auto;
-            filter: grayscale(0.2); 
-            transition: all 0.4s ease; 
-            object-fit: contain;
-        }
-        .slider-item:hover img { 
-            filter: grayscale(0); 
-            transform: scale(1.15); 
-        }
-        .slider-item .text-white {
-            font-size: 1.6rem; /* Increased from 1.4rem */
-            font-weight: 700;
-            margin-top: 1.2rem !important;
-            letter-spacing: 1px;
-        }
+        @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .slider-item { flex: 0 0 auto; width: 500px; margin: 0 3rem; text-align: center; }
+        .slider-logo-box { height: 300px; display: flex; align-items: center; justify-content: center; background: transparent; border-radius: 15px; padding: 1.5rem; }
+        .slider-logo-box img { max-width: 100%; max-height: 450px; width: auto; filter: grayscale(0.2); transition: all 0.4s ease; object-fit: contain; }
+        .slider-item:hover img { filter: grayscale(0); transform: scale(1.15); }
+        .slider-item .text-white { font-size: 1.6rem; font-weight: 700; margin-top: 1.2rem !important; letter-spacing: 1px; }
 
-        /* Responsive adjustments for mobile - still maintaining larger sizes */
+        /* responsive slider */
         @media (max-width: 991px) {
             .section-title { font-size: 2.8rem; }
-            .slider-item {
-                width: 400px; /* Increased from 300px */
-                margin: 0 2rem;
-            }
-            .slider-logo-box {
-                height: 250px; /* Increased from 180px */
-            }
-            .slider-logo-box img {
-                max-height: 220px; /* Increased from 160px */
-            }
-            .sponsor-logo-container {
-                height: auto; /* Fit content */
-            }
-            .sponsor-logo-container img {
-                max-height: 220px; /* Logo max size */
-            }
+            .slider-item { width: 400px; margin: 0 2rem; }
+            .slider-logo-box { height: 250px; }
+            .slider-logo-box img { max-height: 220px; }
+            .sponsor-logo-container img { max-height: 220px; }
         }
-
         @media (max-width: 768px) {
             .section-title { font-size: 2.2rem; }
-            .section-subtitle { font-size: 1.2rem; }
-            .slider-item {
-                width: 350px; /* Increased from 280px */
-                margin: 0 1.5rem;
-            }
-            .slider-logo-box {
-                height: 220px; /* Increased from 160px */
-            }
-            .slider-logo-box img {
-                max-height: 200px; /* Increased from 140px */
-            }
-            .slider-item .text-white {
-                font-size: 1.4rem; /* Increased from 1.2rem */
-            }
-            .sponsor-name {
-                font-size: 1.5rem;
-            }
-            .sponsor-logo-container {
-                height: auto; /* Fit content */
-            }
-            .sponsor-logo-container img {
-                max-height: 180px; /* Logo max size */
-            }
+            .slider-item { width: 350px; margin: 0 1.5rem; }
+            .slider-logo-box { height: 220px; }
+            .slider-logo-box img { max-height: 200px; }
+            .slider-item .text-white { font-size: 1.4rem; }
+            .sponsor-name { font-size: 1.5rem; }
+            .sponsor-logo-container img { max-height: 180px; }
         }
-
         @media (max-width: 576px) {
             .section-title { font-size: 1.8rem; }
-            .slider-item {
-                width: 300px; /* Increased from 240px */
-                margin: 0 1rem;
-            }
-            .slider-logo-box {
-                height: 200px; /* Increased from 140px */
-            }
-            .slider-logo-box img {
-                max-height: 180px; /* Increased from 120px */
-            }
+            .slider-item { width: 300px; margin: 0 1rem; }
+            .slider-logo-box { height: 200px; }
+            .slider-logo-box img { max-height: 180px; }
         }
 
-        /* ----- 3D BUTTONS (effects) ----- */
         .btn-3d-sponsor {
-            background: linear-gradient(145deg, #0066cc, #0052a3);
-            border: none; 
-            border-radius: 15px;
-            padding: 15px 35px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            color: white;
-            text-transform: uppercase;
-            box-shadow: 0 8px 0 #004080, 0 15px 25px rgba(0,102,204,0.3), inset 0 3px 0 rgba(255,255,255,0.2);
-            transition: all 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+            background: linear-gradient(145deg, #0066cc, #0052a3); border: none; border-radius: 15px;
+            padding: 15px 35px; font-family: 'Orbitron', sans-serif; font-weight: 700; color: white;
+            text-transform: uppercase; box-shadow: 0 8px 0 #004080, 0 15px 25px rgba(0,102,204,0.3), inset 0 3px 0 rgba(255,255,255,0.2);
+            transition: all 0.2s; cursor: pointer; text-decoration: none; display: inline-block;
         }
-        .btn-3d-sponsor:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 0 #004080, 0 25px 40px rgba(0,102,204,0.4), inset 0 3px 0 rgba(255,255,255,0.3);
-            background: linear-gradient(145deg, #0077e6, #0066cc);
-            color: white;
-        }
+        .btn-3d-sponsor:hover { transform: translateY(-5px); box-shadow: 0 12px 0 #004080, 0 25px 40px rgba(0,102,204,0.4), inset 0 3px 0 rgba(255,255,255,0.3); background: linear-gradient(145deg, #0077e6, #0066cc); color: white; }
 
-        /* ----- back to top ----- */
+        /* back to top */
         .back-to-top {
-            position: fixed; 
-            bottom: 30px; 
-            right: 30px;
-            width: 50px; 
-            height: 50px; 
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff4733, #ff9966);
-            border: none; 
-            color: white; 
-            font-size: 1.5rem;
-            display: none; 
-            align-items: center; 
-            justify-content: center;
-            box-shadow: 0 0 20px rgba(255,71,51,0.5);
-            z-index: 1000;
-            cursor: pointer;
-            transition: all 0.3s;
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%;
+            background: linear-gradient(135deg, #ff4733, #ff9966); border: none; color: white; font-size: 1.5rem;
+            display: none; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255,71,51,0.5);
+            z-index: 1000; cursor: pointer; transition: all 0.3s;
         }
-        .back-to-top:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 0 30px rgba(255,71,51,0.8); 
-        }
+        .back-to-top:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(255,71,51,0.8); }
 
         /* footer */
-        .footer-3d {
-            border-top: 2px solid #ff4733;
-            background: #000;
-            padding: 2.5rem 0 1rem;
-        }
-        .college-logo { 
-            width: 60px; 
-            height: 60px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-        }
-        .social-icon {
-            width: 45px; 
-            height: 45px; 
-            border-radius: 50%;
-            background: rgba(255,71,51,0.2); 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center;
-            color: #ffcc33; 
-            font-size: 1.5rem;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .social-icon:hover { 
-            background: rgba(255,71,51,0.4); 
-            transform: translateY(-5px); 
-        }
+        .footer-3d { border-top: 2px solid #ff4733; background: #000; padding: 2.5rem 0 1rem; }
+        .college-logo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+        .social-icon { width: 45px; height: 45px; border-radius: 50%; background: rgba(255,71,51,0.2); display: inline-flex; align-items: center; justify-content: center; color: #ffcc33; font-size: 1.5rem; transition: all 0.3s; text-decoration: none; }
+        .social-icon:hover { background: rgba(255,71,51,0.4); transform: translateY(-5px); }
 
-        /* Card button style */
-        .card-btn {
-            background: transparent;
-            border: 2px solid #ff9966;
-            color: #ff9966;
-            transition: all 0.3s ease;
-            margin-top: auto;
-        }
-        .card-btn:hover {
-            background: #ff9966;
-            color: #000;
-            transform: translateY(-3px);
-        }
+        .marketing-logo { max-height: 450px !important; width: auto; }
+        @media (max-width: 768px) { .marketing-logo { max-height: 350px !important; } }
 
-        /* MARKETING LOGO - ENLARGED */
-        .marketing-logo {
-            max-height: 450px !important; /* Increased from 300px */
-            width: auto;
-        }
-        @media (max-width: 768px) {
-            .marketing-logo {
-                max-height: 350px !important;
-            }
+        /* fix for event partners container – now columns work */
+        .sponsor-category .row {
+            --bs-gutter-y: 1.5rem;   /* ensure vertical gap */
         }
     </style>
 </head>
 <body>
-    <!-- custom cursor -->
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
-    <!-- VIDEO BACKGROUND -->
     <div class="video-background">
         <video autoplay muted loop playsinline id="bgVideo" preload="metadata">
             <source src="https://res.cloudinary.com/dpc4l1hic/video/upload/v1770814312/light_gzuewo.mp4" type="video/mp4">
@@ -596,7 +218,6 @@
         <div class="video-overlay"></div>
     </div>
 
-    <!-- OPTIMIZED LOADER - REDUCED TIMING -->
     <div class="loader-container" id="loader">
         <div class="loader-wrapper">
             <span class="loader-letter">S</span>
@@ -611,19 +232,13 @@
         </div>
     </div>
 
-    <!-- SCROLL INDICATOR -->
     <div class="scroll-indicator"></div>
 
-    <!-- ========== UPDATED NAVIGATION - USING ONLY BOOTSTRAP COLLAPSE ========== -->
+    <!-- navigation unchanged -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-lg-4">
             <a class="navbar-brand" href="home.html"></a>
-            <button class="navbar-toggler ms-auto" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#festronixNavbar"
-                aria-controls="festronixNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#festronixNavbar" aria-controls="festronixNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="festronixNavbar">
@@ -641,9 +256,7 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT – bootstrap grid -->
     <main class="container-fluid px-3 px-md-5" style="margin-top: 90px;">
-        <!-- HEADER -->
         <div class="row text-center my-5">
             <div class="col-12">
                 <h1 class="section-title">Our Sponsors</h1>
@@ -651,9 +264,9 @@
             </div>
         </div>
 
-        <!-- MARKETING SPONSOR - featured with larger logo -->
+        <!-- marketing featured (title sponsor) -->
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-10"> <!-- Increased from col-lg-8 -->
+            <div class="col-lg-10">
                 <div class="marketing-featured text-center">
                     <h3 class="category-title">Title Sponsor</h3>
                     <p class="text-white-50">Managed all events</p>
@@ -663,88 +276,43 @@
             </div>
         </div>
 
-        <!-- INFINITE SLIDER – WITH MUCH BIGGER LOGOS -->
+        <!-- infinite slider (unchanged) -->
         <div class="slider-section my-5">
             <h3 class="text-center fs-1 fw-bold" style="color:#ff9966; font-family: Orbitron;">Our Esteemed Partners</h3>
             <div class="position-relative">
                 <div class="slider-track" id="sponsorSlider">
-                    <!-- Only the 4 companies, repeated for infinite effect -->
-                    <div class="slider-item">
-                        <div class="slider-logo-box">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771730397/Untitled_design_12_g2x0cw.png" class="img-fluid" loading="lazy" alt="Web_bocket">
-                        </div>
-                        <div class="text-white mt-2 fw-bold">Web_bocket</div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="slider-logo-box">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731141/Untitled_design_13_yydfph.png" class="img-fluid" loading="lazy" alt="IIG Varsity">
-                        </div>
-                        <div class="text-white mt-2 fw-bold">IIG Varsity</div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="slider-logo-box">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731416/Untitled_design_16_afcrp2.png" class="img-fluid" loading="lazy" alt="Pythonsoft LLP">
-                        </div>
-                        <div class="text-white mt-2 fw-bold">Pythonsoft LLP</div>
-                    </div>
-                    <!-- Duplicate for seamless infinite scroll -->
-                    <div class="slider-item">
-                        <div class="slider-logo-box">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771730397/Untitled_design_12_g2x0cw.png" class="img-fluid" loading="lazy" alt="Web_bocket">
-                        </div>
-                        <div class="text-white mt-2 fw-bold">Web_bocket</div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="slider-logo-box">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731141/Untitled_design_13_yydfph.png" class="img-fluid" loading="lazy" alt="IIG Varsity">
-                        </div>
-                        <div class="text-white mt-2 fw-bold">IIG Varsity</div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="slider-logo-box">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731416/Untitled_design_16_afcrp2.png" class="img-fluid" loading="lazy" alt="Pythonsoft LLP">
-                        </div>
-                        <div class="text-white mt-2 fw-bold">Pythonsoft LLP</div>
-                    </div>
+                    <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771730397/Untitled_design_12_g2x0cw.png" loading="lazy" alt="Web_bocket"></div><div class="text-white mt-2 fw-bold">Web_bocket</div></div>
+                    <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1772077428/Sponsor_qnlqwk.jpg" loading="lazy" alt="SKILLTASKER"></div><div class="text-white mt-2 fw-bold">SKILLTASKER</div></div>
+                    <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731416/Untitled_design_16_afcrp2.png" loading="lazy" alt="Pythonsoft LLP"></div><div class="text-white mt-2 fw-bold">Pythonsoft LLP</div></div>
+                                        <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1772078044/Untitled_design_18_acnlka.png" loading="lazy" alt="DREAMS DEFINERS"></div><div class="text-white mt-2 fw-bold">DREAMS DEFINERS</div></div>
+                    <!-- duplicate -->
+                    <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771730397/Untitled_design_12_g2x0cw.png" loading="lazy" alt="Web_bocket"></div><div class="text-white mt-2 fw-bold">Web_bocket</div></div>
+                    <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1772077428/Sponsor_qnlqwk.jpg" loading="lazy" alt="SKILLTASKER"></div><div class="text-white mt-2 fw-bold">SKILLTASKER</div></div>
+                    <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731416/Untitled_design_16_afcrp2.png" loading="lazy" alt="Pythonsoft LLP"></div><div class="text-white mt-2 fw-bold">Pythonsoft LLP</div></div>
+                                        <div class="slider-item"><div class="slider-logo-box"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1772078044/Untitled_design_18_acnlka.png" loading="lazy" alt="DREAMS DEFINERS"></div><div class="text-white mt-2 fw-bold">DREAMS DEFINERS</div></div>
                 </div>
             </div>
         </div>
 
-        <!-- SPONSOR CATEGORIES - BOOTSTRAP GRID -->
-        <!-- Technical Sponsors with bigger logos -->
-        <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px;">
-            <div class="category-header text-center mb-4">
-                <h2 class="category-title">Media & Marketed Sponsor</h2>
-                <p class="text-white-50">Getting your brand seen and heard</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo-container">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771088369/Untitled_design_3_cnfuok.png" alt="Web_bocket" loading="lazy">
-                        </div>
-                        <div class="sponsor-name">SMS Team</div>
-                        <div class="sponsor-type">MEdia & Marketed Partner</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Event Partners with bigger logos -->
+        <!-- ========== FIXED: EVENT PARTNERS container (proper columns) ========== -->
         <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px;">
             <div class="category-header text-center mb-4">
                 <h2 class="category-title">Event Partners</h2>
                 <p class="text-white-50">Supporting Our Vision</p>
             </div>
+            <!-- BOOTSTRAP ROW with columns – exactly as requested: logos in columns -->
+            <div class="row g-4 justify-content-center">
+                <!-- IIG Varsity card -->
                 <div class="col-sm-6 col-lg-4">
                     <div class="sponsor-card">
                         <div class="sponsor-logo-container">
-                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771731141/Untitled_design_13_yydfph.png" alt="IIG Varsity" loading="lazy">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1772078044/Untitled_design_18_acnlka.png" alt="DREAMS DEFINERS" loading="lazy">
                         </div>
-                        <div class="sponsor-name">IIG Varsity</div>
+                        <div class="sponsor-name">DREAMS DEFINERS</div>
                         <div class="sponsor-type">Events Partner</div>
                     </div>
                 </div>
+                <!-- Pythonsoft LLP card -->
                 <div class="col-sm-6 col-lg-4">
                     <div class="sponsor-card">
                         <div class="sponsor-logo-container">
@@ -754,21 +322,39 @@
                         <div class="sponsor-type">Events Partner</div>
                     </div>
                 </div>
+                <!-- SKILLTASKER card -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="sponsor-card">
+                        <div class="sponsor-logo-container">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1772077428/Sponsor_qnlqwk.jpg" alt="SKILL TASKER" loading="lazy">
+                        </div>
+                        <div class="sponsor-name">SKILL TASKER</div>
+                        <div class="sponsor-type">Events Partner</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Media Partners - hidden but structure kept -->
-        <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px; display: none;">
+        <!-- other categories kept minimal, but structure remains -->
+        <div class="sponsor-category my-5 p-4" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); border-radius: 15px;">
             <div class="category-header text-center mb-4">
-                <h2 class="category-title">Media Partners</h2>
-                <p class="text-white-50">Amplifying Our Message</p>
+                <h2 class="category-title">Media & Marketed Sponsor</h2>
+                <p class="text-white-50">Getting your brand seen</p>
             </div>
-            <div class="row g-4 justify-content-center">
-                <!-- Empty - no media partners shown -->
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="sponsor-card">
+                        <div class="sponsor-logo-container">
+                            <img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771088369/Untitled_design_3_cnfuok.png" alt="SMS Team" loading="lazy">
+                        </div>
+                        <div class="sponsor-name">SMS Team</div>
+                        <div class="sponsor-type">Media & Marketed</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- CTA: contact -->
+        <!-- CTA -->
         <div class="row text-center my-5 py-5">
             <div class="col-12">
                 <h3 style="color:#ff9966; font-family: Orbitron;">Interested in Sponsoring?</h3>
@@ -778,7 +364,6 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer-3d">
         <div class="container">
             <div class="row justify-content-center">
@@ -813,170 +398,52 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
-    <!-- Bootstrap JS Bundle - deferred -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    
-    <!-- OPTIMIZED SCRIPT -->
     <script>
         (function() {
             "use strict";
-            
-            // ==================== OPTIMIZED LOADER - REDUCED TIMING ====================
-            // Hide loader as soon as DOM is ready
             document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() {
                     const loader = document.getElementById('loader');
-                    if (loader) {
-                        loader.classList.add('loader-hidden');
-                        // Remove loader from DOM after transition
-                        setTimeout(() => {
-                            if (loader.parentNode) loader.style.display = 'none';
-                        }, 300);
-                    }
-                }, 800); // Reduced from 1500ms to 800ms
-            });
-
-            // Fallback - ensure loader hides even if DOMContentLoaded already fired
-            if (document.readyState === 'interactive' || document.readyState === 'complete') {
-                setTimeout(function() {
-                    const loader = document.getElementById('loader');
-                    if (loader) {
-                        loader.classList.add('loader-hidden');
-                        setTimeout(() => {
-                            if (loader.parentNode) loader.style.display = 'none';
-                        }, 300);
-                    }
+                    if (loader) { loader.classList.add('loader-hidden'); setTimeout(() => { if(loader.parentNode) loader.style.display = 'none'; }, 300); }
                 }, 800);
+            });
+            if (document.readyState === 'interactive' || document.readyState === 'complete') {
+                setTimeout(function() { const loader = document.getElementById('loader'); if(loader) { loader.classList.add('loader-hidden'); setTimeout(() => { if(loader.parentNode) loader.style.display = 'none'; }, 300); } }, 800);
             }
 
-            // ---------- OPTIMIZED CURSOR ANIMATION ----------
+            // cursor
             const cursorDot = document.querySelector("[data-cursor-dot]");
             const cursorOutline = document.querySelector("[data-cursor-outline]");
-            
             if (cursorDot && cursorOutline && window.innerWidth > 768) {
-                let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-                let rafId = null;
-                
-                document.addEventListener("mousemove", (e) => { 
-                    mouseX = e.clientX; 
-                    mouseY = e.clientY; 
-                    cursorDot.style.left = mouseX + "px"; 
-                    cursorDot.style.top = mouseY + "px"; 
-                });
-                
-                document.addEventListener("mousedown", () => { 
-                    if(cursorOutline) { 
-                        cursorOutline.style.transform = "translate(-50%, -50%) scale(0.8)"; 
-                        cursorOutline.style.borderColor = "#ffcc33"; 
-                    } 
-                });
-                
-                document.addEventListener("mouseup", () => { 
-                    if(cursorOutline) { 
-                        cursorOutline.style.transform = "translate(-50%, -50%) scale(1)"; 
-                        cursorOutline.style.borderColor = "rgba(255,71,51,0.8)"; 
-                    } 
-                });
-                
-                function animateCursor() { 
-                    cursorX += (mouseX - cursorX) * 0.15; 
-                    cursorY += (mouseY - cursorY) * 0.15; 
-                    cursorOutline.style.left = cursorX + "px"; 
-                    cursorOutline.style.top = cursorY + "px"; 
-                    rafId = requestAnimationFrame(animateCursor); 
-                }
+                let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, rafId = null;
+                document.addEventListener("mousemove", (e) => { mouseX = e.clientX; mouseY = e.clientY; cursorDot.style.left = mouseX + "px"; cursorDot.style.top = mouseY + "px"; });
+                document.addEventListener("mousedown", () => { if(cursorOutline) { cursorOutline.style.transform = "translate(-50%, -50%) scale(0.8)"; cursorOutline.style.borderColor = "#ffcc33"; } });
+                document.addEventListener("mouseup", () => { if(cursorOutline) { cursorOutline.style.transform = "translate(-50%, -50%) scale(1)"; cursorOutline.style.borderColor = "rgba(255,71,51,0.8)"; } });
+                function animateCursor() { cursorX += (mouseX - cursorX) * 0.15; cursorY += (mouseY - cursorY) * 0.15; cursorOutline.style.left = cursorX + "px"; cursorOutline.style.top = cursorY + "px"; rafId = requestAnimationFrame(animateCursor); }
                 animateCursor();
+                document.addEventListener('mouseover', (e) => { if(e.target.closest('a, button, .btn-3d-sponsor, .card-btn, .social-icon, .back-to-top') && cursorOutline) { cursorOutline.style.width = '50px'; cursorOutline.style.height = '50px'; cursorOutline.style.borderColor = '#ffcc33'; } });
+                document.addEventListener('mouseout', (e) => { if(e.target.closest('a, button, .btn-3d-sponsor, .card-btn, .social-icon, .back-to-top') && cursorOutline) { cursorOutline.style.width = '40px'; cursorOutline.style.height = '40px'; cursorOutline.style.borderColor = 'rgba(255,71,51,0.8)'; } });
+            } else { if(cursorDot) cursorDot.style.display = 'none'; if(cursorOutline) cursorOutline.style.display = 'none'; }
 
-                // Hover effect for interactive elements - using event delegation
-                document.addEventListener('mouseover', (e) => {
-                    const target = e.target.closest('a, button, .btn-3d-sponsor, .card-btn, .social-icon, .back-to-top');
-                    if (target && cursorOutline) {
-                        cursorOutline.style.width = '50px';
-                        cursorOutline.style.height = '50px';
-                        cursorOutline.style.borderColor = '#ffcc33';
-                    }
-                });
-                
-                document.addEventListener('mouseout', (e) => {
-                    const target = e.target.closest('a, button, .btn-3d-sponsor, .card-btn, .social-icon, .back-to-top');
-                    if (target && cursorOutline) {
-                        cursorOutline.style.width = '40px';
-                        cursorOutline.style.height = '40px';
-                        cursorOutline.style.borderColor = 'rgba(255,71,51,0.8)';
-                    }
-                });
-            } else {
-                // Hide cursor on mobile
-                if (cursorDot) cursorDot.style.display = 'none';
-                if (cursorOutline) cursorOutline.style.display = 'none';
-            }
-
-            // ---------- OPTIMIZED SCROLL INDICATOR & BACK TO TOP (throttled) ----------
+            // scroll indicator & back to top
             const topBtn = document.getElementById('backToTop');
             const scrollIndicator = document.querySelector('.scroll-indicator');
             let ticking = false;
-            
             window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        if (topBtn) {
-                            topBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-                        }
-                        if (scrollIndicator) {
-                            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                            scrollIndicator.style.transform = `scaleX(${winScroll / height})`;
-                        }
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
+                if (!ticking) { window.requestAnimationFrame(() => { if(topBtn) topBtn.style.display = window.scrollY > 300 ? 'flex' : 'none'; if(scrollIndicator) { const winScroll = document.body.scrollTop || document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; scrollIndicator.style.transform = `scaleX(${winScroll / height})`; } ticking = false; }); ticking = true; }
             });
+            if(topBtn) topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            // active nav
+            function setActiveNavItem() { const currentPage = window.location.pathname.split('/').pop() || 'sponsors.html'; document.querySelectorAll('.nav-link').forEach(link => { if(link.getAttribute('href') === currentPage) link.classList.add('active'); else link.classList.remove('active'); }); }
+            document.addEventListener('DOMContentLoaded', setActiveNavItem);
             
-            if (topBtn) {
-                topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-            }
-
-            // ---------- SET ACTIVE NAVIGATION ----------
-            function setActiveNavItem() {
-                const currentPage = window.location.pathname.split('/').pop() || 'sponsors.html';
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href === currentPage) link.classList.add('active');
-                    else link.classList.remove('active');
-                });
-            }
-
-            // ---------- SPONSOR BUTTONS ----------
-            const becomeBtn = document.getElementById('becomeSponsorBtn');
-            if (becomeBtn) {
-                becomeBtn.href = 'https://forms.google.com/your-sponsor-form-link';
-            }
-
-            // ---------- VIDEO AUTOPLAY FALLBACK ----------
-            const video = document.querySelector('video');
-            if (video) {
-                video.play().catch(e => console.log("Autoplay blocked"));
-            }
-
-            // ---------- SLIDER ANIMATION PAUSE ON HOVER ----------
-            const sliderTrack = document.querySelector('.slider-track');
-            if (sliderTrack) {
-                sliderTrack.addEventListener('mouseenter', () => {
-                    sliderTrack.style.animationPlayState = 'paused';
-                });
-                sliderTrack.addEventListener('mouseleave', () => {
-                    sliderTrack.style.animationPlayState = 'running';
-                });
-            }
-
-            // ---------- INITIALIZATION ----------
-            document.addEventListener('DOMContentLoaded', function() {
-                setActiveNavItem();
-            });
+            // video fallback
+            const video = document.querySelector('video'); if(video) video.play().catch(()=>{});
+            const sliderTrack = document.querySelector('.slider-track'); if(sliderTrack) { sliderTrack.addEventListener('mouseenter', () => sliderTrack.style.animationPlayState = 'paused'); sliderTrack.addEventListener('mouseleave', () => sliderTrack.style.animationPlayState = 'running'); }
         })();
     </script>
 </body>
