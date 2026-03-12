@@ -445,10 +445,10 @@
         }
         
         .circle3 { 
-            width: 120px;
-            transform: translate3d(0,0,52px);
-            top: 16px; 
-            right: 16px; 
+            width: 150px;
+            transform: translate3d(0,0,35px);
+            top: 12px; 
+            right: 12px; 
         }
         
         .circle4 { 
@@ -797,21 +797,23 @@
         </div>
     </div>
 
-    <!-- ========== NAVIGATION ========== -->
+    <!-- ========== NAVIGATION (integrated requested items) ========== -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-lg-4">
-            <a class="navbar-brand d-lg-none text-warning fw-bold" href="#"></a>
+            <a class="navbar-brand d-lg-none text-warning fw-bold" href="#">FESTRONIX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#festronixNavbar" aria-controls="festronixNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="festronixNavbar">
+                <!-- full list as requested, with active set appropriately -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
-                    <li class="nav-item"><a class="nav-link" href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="previous.html"><i class="fas fa-history"></i> Previous</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
                     <li class="nav-item"><a class="nav-link" href="sponsors.html"><i class="fas fa-handshake"></i> Sponsors</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certificate.html"><i class="fas fa-certificate"></i> E-Cert</a></li>
                     <li class="nav-item"><a class="nav-link active" href="team.html"><i class="fas fa-users"></i> Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -819,12 +821,10 @@
         </div>
     </nav>
 
-    <!-- Mobile Auth Extra -->
-    <div class="d-lg-none mobile-auth-extra" id="mobileAuthExtra">
-        <div class="mobile-auth-buttons" id="mobileAuthButtons"></div>
-    </div>
+    <!-- Mobile Auth Extra (placeholder, can be empty) -->
+    <div class="d-lg-none mobile-auth-extra" id="mobileAuthExtra"></div>
 
-    <!-- MOBILE OVERLAY -->
+    <!-- MOBILE OVERLAY (optional for extra mobile nav) - keeping minimal to avoid duplication, but we keep the toggle functionality -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay">
         <div class="mobile-nav-container">
             <div class="d-flex justify-content-between align-items-center text-white mb-4">
@@ -836,16 +836,17 @@
                 <p id="mobileUserEmail" class="text-secondary">Not logged in</p>
             </div>
             <div class="d-flex flex-column gap-2">
-                <a href="home.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-home me-3"></i>Home</a>
-                <a href="previous.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-history me-3"></i>Previous</a>
-                <a href="gallery.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-images me-3"></i>Gallery</a>
-                <a href="events.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-calendar-alt me-3"></i>Events</a>
-                <a href="sponsors.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-handshake me-3"></i>Sponsors</a>
-                <a href="about.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-info-circle me-3"></i>About</a>
-                <a href="team.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-users me-3"></i>Team</a>
-                <a href="contact.html" class="mobile-nav-item text-white text-decoration-none p-2"><i class="fas fa-envelope me-3"></i>Contact</a>
+                <!-- duplicate of main nav for overlay, but we can skip to reduce size, but include short version for completeness -->
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="previous.html" class="nav-link"><i class="fas fa-history"></i> Previous</a>
+                <a href="gallery.html" class="nav-link"><i class="fas fa-images"></i> Gallery</a>
+                <a href="events.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Events</a>
+                <a href="sponsors.html" class="nav-link"><i class="fas fa-handshake"></i> Sponsors</a>
+                <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="certificate.html" class="nav-link"><i class="fas fa-certificate"></i> E-Cert</a>
+                <a href="team.html" class="nav-link active"><i class="fas fa-users"></i> Team</a>
+                <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
-            <div class="mt-4 d-flex flex-column gap-2" id="mobileAuthButtons"></div>
         </div>
     </div>
 
@@ -947,7 +948,7 @@
                             </div>
                             <div class="team-card-glass"></div>
                             <div class="team-card-content">
-                                <div class="team-image"><img src="" alt="Ronit Kumar Mishra" loading="lazy"></div>
+                                <div class="team-image"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771317381/e29e83bc-bd7f-468b-b7b6-cbd18f550c64.png" alt="Ronit Kumar Mishra" loading="lazy"></div>
                                 <h3>Ronit Kumar Mishra</h3>
                                 <span class="team-role">Registration Lead</span>
                                 <span class="team-role">Contact:- +91 8249482728</span>
@@ -1055,7 +1056,7 @@
             <h3 class="sub-team-header">Content Creation & Promotion</h3>
 
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="3">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1068,15 +1069,14 @@
                                 <div class="team-image"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318072/2bce0020-1985-459b-b278-a7970a9955a5.png" alt="Shakti Prasad Sahoo" loading="lazy"></div>
                                 <h3>Shakti Prasad Sahoo</h3>
                                 <span class="team-role">Content Manager</span>
-                                
                                 <p class="team-description">Manages all types of content creation and promotion activities for the event.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Om Prakash Choudhary -->
+                <!-- Ayush Kumar Nath -->
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="16">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1088,15 +1088,15 @@
                             <div class="team-card-content">
                                 <div class="team-image"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318227/e52e9af4-197b-480c-9e82-2ed5e16b37da.png" alt="Ayush Kumar Nath" loading="lazy"></div>
                                 <h3>Ayush Kumar Nath</h3>
-                                <span class="team-role">Lead Video Edditor</span>
+                                <span class="team-role">Lead Video Editor</span>
                                 <p class="team-description">Manages all types of video editing and production activities for the event.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Om Prakash Choudhary -->
+                <!-- Ashutosh Parthasarathi -->
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="15">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1114,9 +1114,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Om Prakash Choudhary -->
+                <!-- Suraj Jena -->
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="19">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1129,15 +1129,14 @@
                                 <div class="team-image"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318561/8d59567d-36f9-4336-95fb-5a1aa0708d90.png" alt="Suraj Jena" loading="lazy"></div>
                                 <h3>Suraj Jena</h3>
                                 <span class="team-role">Lead Graphics Designer</span>
-                                
                                 <p class="team-description">Responsible for creating and managing all visual elements of the event.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Om Prakash Choudhary -->
+                <!-- Priyansu Rout -->
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="18">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1150,36 +1149,14 @@
                                 <div class="team-image"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771319012/Screenshot_2026-02-17_143319_bqcmwg.png" alt="Priyansu Rout" loading="lazy"></div>
                                 <h3>Priyansu Rout</h3>
                                 <span class="team-role">Videographer</span>
-                                <span class="team-role">Contact:- +91 9337155808</span>
                                 <p class="team-description">Responsible for capturing and editing all video content for the event.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Om Prakash Choudhary -->
+                <!-- Piyush Nayak -->
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
-                        <div class="team-card-3d">
-                            <div class="team-card-logo">
-                                <span class="circle circle3"></span><span class="circle circle4"></span>
-                                <span class="circle circle5">
-                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-                                </span>
-                            </div>
-                            <div class="team-card-glass"></div>
-                            <div class="team-card-content">
-                                <div class="team-image"><img src="https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477053/a5c215bc-10b2-4515-af02-8a758cd76195.png" alt="Om Prakash Choudhary" loading="lazy"></div>
-                                <h3>Om Prakash Choudhary</h3>
-                                <span class="team-role">Sponsorship Coordinator</span>
-                                <span class="team-role">Contact:- +91 9337155808</span>
-                                <p class="team-description">Manages sponsor relationships, coordinates sponsorship activities, and ensures smooth communication with partners.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Om Prakash Choudhary -->
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="17">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1197,9 +1174,9 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- Sohan Pradhan -->
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="team-card-parent" data-member="21">
+                    <div class="team-card-parent" data-member="20">
                         <div class="team-card-3d">
                             <div class="team-card-logo">
                                 <span class="circle circle3"></span><span class="circle circle4"></span>
@@ -1217,6 +1194,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
             <!-- Ceremony & Closing Team -->
             <h3 class="sub-team-header">Ceremony & Closing</h3>
@@ -1363,31 +1341,15 @@
     <!-- Bootstrap JS Bundle - deferred for performance -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     
-    <!-- OPTIMIZED SCRIPT -->
+    <!-- OPTIMIZED SCRIPT (same as original, with teamMembers extended) -->
     <script>
         (function(){
             "use strict";
 
-            // Performance optimization - use requestIdleCallback for non-critical tasks
             const queueTask = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 
-            // ==================== LOADER - REDUCED TIMING ====================
-            // Hide loader as soon as DOM is interactive
+            // Hide loader
             document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(function() {
-                    const loader = document.getElementById('loader');
-                    if (loader) {
-                        loader.classList.add('loader-hidden');
-                        // Remove loader from DOM after transition
-                        setTimeout(() => {
-                            if (loader.parentNode) loader.style.display = 'none';
-                        }, 300);
-                    }
-                }, 800); // Reduced from 3000ms to 800ms
-            });
-
-            // Fallback - ensure loader hides even if DOMContentLoaded already fired
-            if (document.readyState === 'interactive' || document.readyState === 'complete') {
                 setTimeout(function() {
                     const loader = document.getElementById('loader');
                     if (loader) {
@@ -1397,9 +1359,9 @@
                         }, 300);
                     }
                 }, 800);
-            }
+            });
 
-            // ----- CURSOR (optimized animation) -----
+            // Cursor and other features (copied from original with full team data)
             const cursor = document.querySelector('.cursor');
             const cursorDot = document.querySelector('.cursor-dot');
             
@@ -1426,7 +1388,6 @@
                 
                 animate();
                 
-                // hover effect - optimized with event delegation
                 document.addEventListener('mouseover', (e) => {
                     const target = e.target.closest('a, button, .team-card-parent');
                     if (target && cursor) {
@@ -1445,37 +1406,36 @@
                     }
                 });
             } else {
-                // Hide cursor on mobile
                 if (cursor) cursor.style.display = 'none';
                 if (cursorDot) cursorDot.style.display = 'none';
             }
 
-            // ----- TEAM MEMBER DATA (moved to separate object for better organization) -----
+            // TEAM MEMBERS DATA (extended)
             const teamMembers = {
                 '1': { name: 'Dr. Satya Ranjan Pattanaik', role: 'Events SPOC', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771315014/7beaec65-27a2-4e64-bdf2-fb66adde0368.png', desc: 'Overall coordination and strategic planning. Leads core team, manages departments, and coordinates with administration. Exceptional leadership.' },
-                '2': { name: 'Prof. Jagannath Ray', role: 'Co-SPOC', image: '', desc: 'Manages PR, marketing, social media, sponsors. Digital marketing expert, boosts fest reach.' },
-                '3': { name: 'Shakti Prasad Sahoo', role: 'Content Strategist', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318072/2bce0020-1985-459b-b278-a7970a9955a5.png', desc: 'Leads content strategy, blog posts, and promotional materials.' },
-                '4': { name: 'Sumit Kumar Rout', role: 'Website Development', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771317381/e29e83bc-bd7f-468b-b7b6-cbd18f550c64.png', desc: 'Develops website, registration portal, full-stack expert. Seamless UX.' },
+                '2': { name: 'Prof. Jagannath Ray', role: 'Co-SPOC', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771561390/80bea7b1-260e-4adf-966b-8ac3c7eb18fa.png', desc: 'Manages PR, marketing, social media, sponsors. Digital marketing expert, boosts fest reach.' },
+                '3': { name: 'Shakti Prasad Sahoo', role: 'Content Manager', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318072/2bce0020-1985-459b-b278-a7970a9955a5.png', desc: 'Manages all types of content creation and promotion activities for the event.' },
+                '4': { name: 'Sumit Kumar Rout', role: 'Website Developer', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771317381/e29e83bc-bd7f-468b-b7b6-cbd18f550c64.png', desc: 'Develops website, registration portal, full-stack expert. Seamless UX.' },
                 '5': { name: 'Somen Pradhan', role: 'Student SPOC', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771329395/20260121_094336.jpg_uttxgq.jpg', desc: 'Student coordinator managing sponsor relationships, partnerships, and funding acquisition. Expert in corporate communications.' },
-                '6': { name: 'SK Saiful Adil Qadir', role: 'Student SPOC - AI/ML', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477126/Adil_igzhsa.png', desc: 'Student coordinator handling AI/ML initiatives and technical workshops. Manages any technical issues.' },
+                '6': { name: 'SK Saiful Adil Qadir', role: 'Student SPOC', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477126/Adil_igzhsa.png', desc: 'Student coordinator handling initiatives and technical workshops. Manages any technical issues.' },
                 '7': { name: 'Sraddhananda Rath', role: 'Ceremony Coordinator', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771319207/Screenshot_2026-02-17_143624_pljod7.png', desc: 'Manages opening and closing ceremonies, stage setup, and event flow.' },
                 '8': { name: 'Dibyaranjan Jena', role: 'Event Management Head', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477085/517a71c9-6c03-478c-b3cd-dbdac6b896ea.png', desc: 'Manages all cultural events, logistics, scheduling, and venue coordination.' },
                 '9': { name: 'Vikash Adhikari', role: 'Sponsorship Coordinator', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771319206/Screenshot_2026-02-17_143542_u8832k.png', desc: 'Coordinates sponsor meetings, manages sponsorship deliverables and communications.' },
                 '10': { name: 'Deba Prasad Sutar', role: 'Sponsorship Executive', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771329604/IMG_20260217_172318154.jpg_bwdgsz.jpg', desc: 'Handles sponsor outreach, proposals, and maintaining sponsor databases.' },
                 '11': { name: 'Nafeesha Alam', role: 'Stage Management', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477272/6cc86055-f9f6-4813-967e-74e583524729.png', desc: 'Handles stage setup, audio-visual coordination, and backstage management.' },
                 '12': { name: 'Pragyanshree Samal', role: 'Hospitality', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771329673/5c76839b-1ad8-483d-ab0d-9f3305471762.png', desc: 'Manages guest hospitality, green room, and VIP coordination during ceremonies.' },
-                '13': { name: 'Ronit Kumar Mishra', role: 'Website Developer', image: '', desc: 'Backend development for the fest website.' },
+                '13': { name: 'Ronit Kumar Mishra', role: 'Registration Lead', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771317381/e29e83bc-bd7f-468b-b7b6-cbd18f550c64.png', desc: 'Manages registration process, handles participant queries, and ensures smooth onboarding.' },
                 '14': { name: 'Trilochan Chakaraborty', role: 'Technical Lead', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318848/Screenshot_2026-02-17_143033_pqakf8.png', desc: 'Oversees technical infrastructure, hardware setup, and technical support.' },
-                '15': { name: 'Ashutosh Parthasarathi', role: 'Content Writer', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771317397/9e4f6da9-ae79-4f5b-9786-fcb1565bf33a.png', desc: 'Creates engaging content for social media and website.' },
-                '16': { name: 'Ayush Kumar Nath', role: 'Social Media', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318227/e52e9af4-197b-480c-9e82-2ed5e16b37da.png', desc: 'Manages social media accounts and engagement.' },
-                '17': { name: 'Piyush Nayak', role: 'Video Editor', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477610/Piyush_lydlhc.jpg', desc: 'Creates promotional videos and recap reels.' },
-                '18': { name: 'Priyansu Rout', role: 'Graphic Designer', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771319012/Screenshot_2026-02-17_143319_bqcmwg.png', desc: 'Designs posters, banners, and digital assets.' },
-                '19': { name: 'Suraj Jena', role: 'Head Graphic Designer', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318561/8d59567d-36f9-4336-95fb-5a1aa0708d90.png', desc: 'Designs posters, banners, and digital assets.' },
-                '20': { name: 'Sohan Kumar Pradhan', role: 'Promotions Lead', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318486/c58df1ef-de2d-46bf-81ed-204e5659bd78.png', desc: 'Coordinates on-ground promotions and campaigns.' },
+                '15': { name: 'Ashutosh Parthasarathi', role: 'Assistant Content Manager', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771317397/9e4f6da9-ae79-4f5b-9786-fcb1565bf33a.png', desc: 'Manages content creation and editorial tasks for the event.' },
+                '16': { name: 'Ayush Kumar Nath', role: 'Lead Video Editor', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318227/e52e9af4-197b-480c-9e82-2ed5e16b37da.png', desc: 'Manages all types of video editing and production activities for the event.' },
+                '17': { name: 'Piyush Nayak', role: 'Video/Cameraman', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477610/Piyush_lydlhc.jpg', desc: 'Responsible for capturing and editing all video content for the event.' },
+                '18': { name: 'Priyansu Rout', role: 'Videographer', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771319012/Screenshot_2026-02-17_143319_bqcmwg.png', desc: 'Responsible for capturing and editing all video content for the event.' },
+                '19': { name: 'Suraj Jena', role: 'Lead Graphics Designer', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318561/8d59567d-36f9-4336-95fb-5a1aa0708d90.png', desc: 'Responsible for creating and managing all visual elements of the event.' },
+                '20': { name: 'Sohan Pradhan', role: 'Video/Cameraman', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771318486/c58df1ef-de2d-46bf-81ed-204e5659bd78.png', desc: 'Responsible for capturing and editing all video content for the event.' },
                 '21': { name: 'Om Prakash Choudhary', role: 'Sponsorship Coordinator', image: 'https://res.cloudinary.com/dpc4l1hic/image/upload/v1771477053/a5c215bc-10b2-4515-af02-8a758cd76195.png', desc: 'Manages sponsor relationships, coordinates sponsorship activities, and ensures smooth communication with partners.' }
             };
 
-            // ----- MODAL (optimized) -----
+            // MODAL functionality
             const modal = document.getElementById('teamModal');
             const modalImg = document.getElementById('modalImage');
             const modalName = document.getElementById('modalName');
@@ -1496,7 +1456,6 @@
             
             window.showTeamMember = showTeamMember;
             
-            // Attach click events to cards - use event delegation for better performance
             document.addEventListener('click', (e) => {
                 const card = e.target.closest('.team-card-parent');
                 if (card && !e.target.closest('.team-social') && !e.target.closest('.view-more-button')) {
@@ -1515,7 +1474,6 @@
                 }
             });
             
-            // Close modal
             document.getElementById('closeModal').addEventListener('click', function(){ 
                 modal.classList.remove('active'); 
                 document.body.style.overflow = 'auto'; 
@@ -1528,7 +1486,7 @@
                 } 
             });
 
-            // ----- SCROLL INDICATOR & BACK TO TOP (throttled) -----
+            // Scroll features and active nav (already set with 'active' on team.html)
             function initScrollFeatures() {
                 const topBtn = document.getElementById('backToTop');
                 const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -1555,40 +1513,10 @@
                     topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
                 }
             }
-
-            // ----- SET ACTIVE NAVIGATION -----
-            function setActiveNavItem() {
-                const currentPage = window.location.pathname.split('/').pop() || 'team.html';
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href === currentPage) link.classList.add('active');
-                    else link.classList.remove('active');
-                });
-            }
-
-            // ----- VIDEO AUTOPLAY -----
-            const video = document.querySelector('video');
-            if (video) {
-                video.play().catch(e => console.log("Autoplay blocked"));
-            }
-
-            // ----- INITIALIZATION (defer non-critical tasks) -----
+            
             document.addEventListener('DOMContentLoaded', function() {
-                // Critical tasks first
-                setActiveNavItem();
-                
-                // Defer non-critical tasks
-                queueTask(() => {
-                    initScrollFeatures();
-                }, { timeout: 1000 });
+                initScrollFeatures();
             });
-
-            // Fallback for older browsers
-            if (!window.requestIdleCallback) {
-                window.requestIdleCallback = function(callback) {
-                    return setTimeout(callback, 1);
-                };
-            }
         })();
     </script>
 </body>
